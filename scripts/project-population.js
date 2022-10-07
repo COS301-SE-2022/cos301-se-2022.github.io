@@ -146,7 +146,7 @@ class ProjectList {
 		const derivco = new Company("Derivco");
 
 		const officeBooker = new Project(
-			this.epiUse,
+			epiUse,
 			"Office Booker",
 			"Kryptos Kode",
 			"https://github.com/COS301-SE-2022/Office-Booker",

@@ -161,7 +161,7 @@ class ProjectList {
 			"No Email"
 		);
 		const voteVault = new Project(
-			"Unknown Company",
+			epiUse,
 			"Vote Vault",
 			"SSDpressed",
 			"https://github.com/COS301-SE-2022/Vote-Vault",

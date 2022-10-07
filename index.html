@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<!-- Bootstrap - requires jQuery for some functionality -->
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"
+		></script>
+
+		<!-- Bootstrap - Latest compiled and minified JavaScript -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+			integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+			crossorigin="anonymous"
+		></script>
+
+		<!-- Bootstrap - Latest compiled and minified CSS -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+			integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+			crossorigin="anonymous"
+		/>
+
+		<!-- Bootstrap - Optional theme -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css"
+			integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ"
+			crossorigin="anonymous"
+		/>
+
+		<!-- Own stylesheet -->
+		<link rel="stylesheet" href="styles/styles.css" />
+
+		<!-- Project population script -->
+		<script src="scripts/project-population.js"></script>
+
+		<title>COS301 Project Day</title>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">
+						<img
+							alt="UP"
+							src="images/UP.png"
+							style="object-fit: cover; max-height: 100%"
+						/>
+					</a>
+					<a class="navbar-brand" href="#"> COS301 Project Day </a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#">Home</a></li>
+						<li><a href="sponsors.html">Sponsors</a></li>
+						<li><a href="#">About</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container-fluid">
+			<h1 class="text-center">COS301 Project Day</h1>
+			<button id="myBtn" onclick="detailPopup()">Open Modal</button>
+			<div class="container-fluid row text-center" id="project-container"></div>
+		</div>
+
+		<div id="myModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close" onclick="closeModal()">&times;</span>
+				<p>Some text in the Modal..</p>
+			</div>
+		</div>
+	</body>
+</html>

@@ -16,7 +16,9 @@ class Populator {
 			document.getElementById("project-container");
 
 		const card = document.createElement("a");
-		card.setAttribute("href", project.githubLink);
+		card.setAttribute("data-toggle", "modal");
+		card.setAttribute("data-target", "#project-modal");
+
 		card.setAttribute("class", "card");
 		card.setAttribute("class", "col-sm-6");
 		card.style.boxShadow = "rgba(0, 0, 0, 0.24) 0px 3px 8px";
@@ -61,31 +63,27 @@ class Populator {
 		}
 		cardBody.appendChild(cardCompany);
 
-		// const cardText = document.createElement("p");
-		// cardText.setAttribute("class", "card-text");
-		// cardText.innerText =
-		//	project.description;
-		// cardBody.appendChild(cardText);
-
 		card.appendChild(cardBody);
 
 		projectsContainerElement.appendChild(card);
+
+		card.onclick = () => {
+			this.detailPopup(project);
+		};
 	}
 
-	detailPopup() {
-		var modal = document.getElementById("myModal");
+	detailPopup(project) {
+		console.log("Popping up details for project " + project.name);
 
-		modal.style.display = "block";
+		const modalTitle = document.getElementById("modal-title");
+		const modalHeading = document.getElementById("modal-heading");
+		const modalDescription = document.getElementById("modal-description");
+		const btnGitLink = document.getElementById("modal-git-link");
 
-		// add detail to modal
-
-		// show modal
-		
-	}
-
-	closeModal() {
-		var modal = document.getElementById("myModal");
-		modal.style.display = "none";
+		modalTitle.innerText = project.name;
+		modalHeading.innerText = "Team " + project.team + ", working alongside industry client " + project.company.name;
+		modalDescription.innerText = project.description;
+		btnGitLink.setAttribute("href", project.githubLink);
 	}
 }
 
@@ -151,14 +149,17 @@ class ProjectList {
 			"Kryptos Kode",
 			"https://github.com/COS301-SE-2022/Office-Booker",
 			"No Email",
-			"office-booker-logo.png"
+			"office-booker-logo.png",
+			"Office Booker is a program designed to help employees with booking desk space and meeting rooms for a specific date in their office. Many companies have downscaled their office space so therefore not every employee can be in the office at once. Office Booker provides a reliable way to book space for employees to work at their office."
 		);
 		const teamUtilisationMonitor = new Project(
 			epiUse,
 			"Team Utilisation Monitor",
 			"iCreateSoftware",
 			"https://github.com/COS301-SE-2022/Team-Utilisation-Monitor",
-			"No Email"
+			"No Email",
+			"UP.png",
+			"Team utilisation monitor is an application that is used by administractors, or employers, to monitor and manage teams and projects. Management features include, creating teams and projects, assigning those teams to projects, adding and removing team members, assessing team members, seeing the utilisation of all members and generally having an overview of the entire organisation's operations. Admins can also add skills, for members to take up on and the platform has a recommendation engine that generates teams based on specific criteria with respect to the project."
 		);
 		const voteVault = new Project(
 			epiUse,
@@ -166,7 +167,8 @@ class ProjectList {
 			"SSDpressed",
 			"https://github.com/COS301-SE-2022/Vote-Vault",
 			"No Email",
-			"ssdpressed.png"
+			"ssdpressed.png",
+			"he system needs to automate the voting process, while also making sure the votes are valid and secure. The voting system will make use of a blockchain and Smart Contracts to save and verify user votes. The system will be available to users on the web or in the form of a mobile application. The votes will be verified by scanning voter IDs, then users will be allowed to vote. Votes will be verified and counted using the blockchain. Users will be able to see progress on the voting system. Instead of hard coding forms for elections, it should be dynamically generated according to input provided by the voting official. A dashboard should be made to give some additional information about the voting process, such as distributions about the users."
 		);
 		const reverseHand = new Project(
 			aws,

@@ -19,7 +19,7 @@ class Populator {
 		card.setAttribute("data-toggle", "modal");
 		card.setAttribute("data-target", "#project-modal");
 
-		card.setAttribute("class", "card");
+		// card.setAttribute("class", "card");
 		card.setAttribute("class", "col-sm-6");
 		card.style.boxShadow = "rgba(0, 0, 0, 0.24) 0px 3px 8px";
 		card.style.width = "26rem";
@@ -79,11 +79,15 @@ class Populator {
 		const modalHeading = document.getElementById("modal-heading");
 		const modalDescription = document.getElementById("modal-description");
 		const btnGitLink = document.getElementById("modal-git-link");
+		const modalTeamImage = document.getElementById("modal-team-image");
+		const modalCompanyImage = document.getElementById("modal-company-image");
 
 		modalTitle.innerText = project.name;
 		modalHeading.innerText = "Team " + project.team + ", working alongside industry client " + project.company.name;
 		modalDescription.innerText = project.description;
 		btnGitLink.setAttribute("href", project.githubLink);
+		modalTeamImage.setAttribute("src",  "images/projectLogos/" + project.imageLink);
+		modalCompanyImage.setAttribute("src", "images/companyLogos/" + project.company.imageLink);
 	}
 }
 
@@ -136,12 +140,12 @@ class ProjectList {
 
 	generateList() {
 		const projects = [];
-		const epiUse = new Company("Epi-Use");
-		const mathU = new Company("MathU");
-		const aws = new Company("Amazon");
-		const retroRabbit = new Company("Retro Rabbit");
-		const agileBridge = new Company("Agile Bridge");
-		const derivco = new Company("Derivco");
+		const epiUse = new Company("Epi-Use", "EPI-USE-logo.png");
+		const mathU = new Company("MathU", "MathU-Logo_RGBshort-1.png");
+		const aws = new Company("Amazon", "Amazon_Web_Services_Logo.png");
+		const retroRabbit = new Company("Retro Rabbit", "RetroRabbit.png");
+		const agileBridge = new Company("Agile Bridge", "agile-bridge.png");
+		const derivco = new Company("Derivco", "derivco-logo.png");
 
 		const officeBooker = new Project(
 			epiUse,

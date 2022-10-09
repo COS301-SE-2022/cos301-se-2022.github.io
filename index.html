@@ -63,14 +63,18 @@
 			</div>
 		</nav>
 
-		<div class="container-fluid">
+		<div class="d-flex justify-content-center">
 			<h1 class="text-center">COS301 Project Day</h1>
-			<div class="container-fluid row text-center" id="project-container"></div>
+			<div
+				class="container-fluid row text-center"
+				id="project-container"
+				style="margin: 0 auto; justify-content: center"
+			></div>
 		</div>
 
 		<!-- Modal -->
 		<div id="project-modal" class="modal fade" role="dialog">
-			<div class="modal-dialog" style="z-index: 9999;">
+			<div class="modal-dialog" style="z-index: 9999">
 				<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-header">
@@ -81,6 +85,16 @@
 					</div>
 					<div class="modal-body">
 						<h3 id="modal-heading"></h3>
+						<div id="modal-image-container">
+							<img 
+								id="modal-team-image" 
+								style="width: 40%; padding: 6px; max-height: 200px; object-fit: contain;" 
+							/>
+							<img
+								id="modal-company-image"
+								style="width: 40%; padding: 6px; max-height: 200px; object-fit: contain;"
+							/>
+						</div>
 						<p id="modal-description">Some text in the modal.</p>
 					</div>
 					<div class="modal-footer">

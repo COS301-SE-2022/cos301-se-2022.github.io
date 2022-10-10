@@ -206,7 +206,7 @@ class ProjectList {
 			"iCreateSoftware",
 			"https://github.com/COS301-SE-2022/Team-Utilisation-Monitor",
 			"No Email",
-			"UP.png",
+			"icreate.jpg",
 			"Team utilisation monitor is an application that is used by administractors, or employers, to monitor and manage teams and projects. Management features include, creating teams and projects, assigning those teams to projects, adding and removing team members, assessing team members, seeing the utilisation of all members and generally having an overview of the entire organisation's operations. Admins can also add skills, for members to take up on and the platform has a recommendation engine that generates teams based on specific criteria with respect to the project."
 		);
 		const voteVault = new Project(
@@ -260,7 +260,7 @@ class ProjectList {
 			"Derived",
 			"https://github.com/COS301-SE-2022/Training-Buddy",
 			"email",
-			"UP.png",
+			"derived.png",
 			"Training Buddy has the vision of providing a secure and user-friendly way for exercise enthusiasts of all levels to be able to enhance their fitness journeys by connecting with like-minded users with similar training interests and scheduling workouts together."
 		);
 		const tradeSim = new Project(
@@ -359,7 +359,7 @@ class ProjectList {
 			"HardCode",
 			"https://github.com/COS301-SE-2022/Image-Converter",
 			"email",
-			"UP.png",
+			"hardcode.png",
 			"With our current climate of easy access to information, we are faced with the problem of information overload. Therefore it is important that we are able to view data in a concise format. This will allow us to understand the data in a comprehensive manner without getting distracted by unnecessary information. Graphing is a way to counter the problem effectively. However, mismatched or unclear graphs fail to help us understand the data adequately. The Image converter is a tool created for a Content Management System (CMS). It hosts a variety of functions of image manipulation, such as image cleaning, classification and filtering. The tool also manages uploaded images in a concise and efficient way. The tool will be used solely by administrators of the CMS"
 		);
 		const tutorMe = new Project(
@@ -386,7 +386,7 @@ class ProjectList {
 			"Anoobis",
 			"https://github.com/COS301-SE-2022/Slip-Snapper",
 			"email",
-			"UP.png",
+			"slipsnap.png",
 			"The Slip Snapper is a cross-platform application that assists in managing an individual's expenses. It will accomplish this by allowing a user to scan their receipts using optical character recognition (OCR) with a mobile device and create comprehensive expense reports."
 		);
 		const chopperCharlie = new Project(

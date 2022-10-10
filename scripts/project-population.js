@@ -19,7 +19,7 @@ class Populator {
 		card.setAttribute("data-toggle", "modal");
 		card.setAttribute("data-target", "#project-modal");
 
-		card.setAttribute("class", "card");
+		// card.setAttribute("class", "card");
 		card.setAttribute("class", "col-sm-6");
 		card.style.boxShadow = "rgba(0, 0, 0, 0.24) 0px 3px 8px";
 		card.style.width = "26rem";
@@ -79,11 +79,47 @@ class Populator {
 		const modalHeading = document.getElementById("modal-heading");
 		const modalDescription = document.getElementById("modal-description");
 		const btnGitLink = document.getElementById("modal-git-link");
+		const modalTeamImage = document.getElementById("modal-team-image");
+		const modalCompanyImage = document.getElementById("modal-company-image");
 
 		modalTitle.innerText = project.name;
 		modalHeading.innerText = "Team " + project.team + ", working alongside industry client " + project.company.name;
 		modalDescription.innerText = project.description;
 		btnGitLink.setAttribute("href", project.githubLink);
+		modalTeamImage.setAttribute("src",  "images/projectLogos/" + project.imageLink);
+		modalCompanyImage.setAttribute("src", "images/companyLogos/" + project.company.imageLink);
+	}
+
+	populateSponsors(sponsors) {
+		const container = document.getElementById("sponsors-container");
+		sponsors.forEach(sponsor => {
+			const sponsorCard = document.createElement("div");
+			sponsorCard.style.height = "32rem";
+			sponsorCard.style.width = "32rem";
+			sponsorCard.style.objectFit = "cover";
+			sponsorCard.setAttribute("class", "card");
+			sponsorCard.style.color = "black";
+			sponsorCard.style.backgroundColor = "white";
+			sponsorCard.style.padding = "12px";
+			sponsorCard.style.margin = "12px";
+
+			const imgContainer = document.createElement("div");
+			imgContainer.style.height = "70%";
+			imgContainer.style.width = "100%";
+			imgContainer.style.objectFit = "cover";
+			const image = document.createElement("img");
+			image.setAttribute("src", "images/companyLogos/" + sponsor.imageLink);
+			image.style.maxWidth = "100%";
+			image.style.maxHeight = "100%";
+			imgContainer.appendChild(image);
+			sponsorCard.appendChild(imgContainer);
+
+			const headings = document.createElement("h3");
+			headings.innerText = sponsor.name;
+			sponsorCard.appendChild(headings);
+
+			container.appendChild(sponsorCard);
+		});
 	}
 }
 
@@ -129,6 +165,17 @@ function init() {
 	});
 }
 
+function populateSponsorsHelper() {
+	const testProjectList = new Array();
+	const testCompany1 = new Company("Test Company");
+	const testProject1 = new Project(testCompany1);
+	const testPopulator = new Populator(testProjectList);
+
+	const projectList = new ProjectList();
+	const companies = projectList.getCompanies();
+	testPopulator.populateSponsors(companies);
+}
+
 class ProjectList {
 	constructor(projectList = null) {
 		this.projectList = projectList;
@@ -136,12 +183,12 @@ class ProjectList {
 
 	generateList() {
 		const projects = [];
-		const epiUse = new Company("Epi-Use");
-		const mathU = new Company("MathU");
-		const aws = new Company("Amazon");
-		const retroRabbit = new Company("Retro Rabbit");
-		const agileBridge = new Company("Agile Bridge");
-		const derivco = new Company("Derivco");
+		const epiUse = new Company("Epi-Use", "EPI-USE-logo.png");
+		const mathU = new Company("MathU", "MathU-Logo_RGBshort-1.png");
+		const aws = new Company("Amazon", "Amazon_Web_Services_Logo.png");
+		const retroRabbit = new Company("Retro Rabbit", "RetroRabbit.png");
+		const agileBridge = new Company("Agile Bridge", "agile-bridge.png");
+		const derivco = new Company("Derivco", "derivco-logo.png");
 
 		const officeBooker = new Project(
 			epiUse,
@@ -438,5 +485,26 @@ class ProjectList {
 		);
 
 		return projects;
+	}
+
+	getCompanies() {
+		const companies = new Array;
+		const epiUse = new Company("Epi-Use", "EPI-USE-logo.png");
+		const retroRabbit = new Company("Retro Rabbit", "RetroRabbit.png");
+		const agileBridge = new Company("Agile Bridge", "agile-bridge.png");
+		const entelect = new Company("Entelect", "entelect.webp");
+		const comotion = new Company("Comotion Business Solutions", "comotion.png");
+		const hensoldt = new Company("Hensoldt", "hensoldt.png");
+		const kindle = new Company("Kindle", "kindle.png");
+		const alligience =new Company("Alligience Consulting", "alligience.png");
+		companies.push(epiUse);
+		companies.push(retroRabbit);
+		companies.push(agileBridge);
+		companies.push(entelect);
+		companies.push(comotion);
+		companies.push(hensoldt);
+		companies.push(kindle);
+		companies.push(alligience);
+		return companies;
 	}
 }

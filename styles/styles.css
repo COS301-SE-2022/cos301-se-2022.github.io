@@ -1,5 +1,5 @@
 body {
-	background-image: linear-gradient(to bottom right, darkgrey, black);
+	background-image: linear-gradient(to bottom right, black, darkgrey);
 }
 
 .card:hover {

@@ -44,7 +44,7 @@ class Populator {
     const cardBody = document.createElement("div");
     cardBody.setAttribute("class", "card-body");
     cardBody.style.height = "50%";
-    const cardTitle = document.createElement("h1");
+    const cardTitle = document.createElement("h2");
     cardTitle.setAttribute("class", "card-title");
     cardTitle.innerText = project.name;
     cardBody.appendChild(cardTitle);
@@ -256,7 +256,7 @@ class ProjectList {
       "DACERS",
       "https://github.com/COS301-SE-2022/Fresh-Produce-Inventory-Tracker",
       "email",
-      "UP.jpg",
+      "fresh.jpg",
       "The fresh-produce tracker will be implemented to allow fresh produce-store owners to track the stock and quality of their produce through various methods. These methods will include using a scale which is placed at the bottom of a shelf, the initial combined weight of all individual items on the shelf is compared to the current combined weight of items on the shelf in order to calculate the current quantity of that specific item in stock. Security measures will be implemented to ensure the safe and ethical use of the fresh-produce tracker."
     );
     const twitterSummariser = new Project(
@@ -324,7 +324,7 @@ class ProjectList {
     );
     const intelligentvms = new Project(
       epiUse,
-      "Intelligent Visitor Management System (VMS)",
+      "Intelligent Visitor Management System",
       "Firestorm",
       "https://github.com/COS301-SE-2022/Intelligent-VMS-Visitor-Management-System-",
       "email",
@@ -337,7 +337,7 @@ class ProjectList {
       "Denied Access",
       "https://github.com/COS301-SE-2022/Grid-Watch",
       "email",
-      "UP.jpg",
+      "gridwatch.png",
       "This system attempts to provide a method for members of the public to be able to communicate, and resolve, municipal issues in their areas. From there the process of resolving these issues is communicated through the GridWatch System application."
     );
     const cryptoHub = new Project(
@@ -346,7 +346,7 @@ class ProjectList {
       "Code Force",
       "https://github.com/COS301-SE-2022/CryptoHub",
       "email",
-      "UP.jpg",
+      "codeforce.jpg",
       "CryptoHub is an interactive and social application that allows a user to explore the world of crypto. Each user has the ability to share and explore investment recommendations, crypto stories as well as have insight into crypto coins and the current global crypto news."
     );
     const charitySpot = new Project(

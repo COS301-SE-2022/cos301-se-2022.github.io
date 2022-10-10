@@ -23,7 +23,7 @@ class Populator {
     card.setAttribute("class", "col-sm-6");
     card.style.boxShadow = "rgba(0, 0, 0, 0.24) 0px 3px 8px";
     card.style.width = "26rem";
-    card.style.minWidth = "px";
+    card.style.minWidth = "400px";
     card.style.height = "36rem";
     card.style.minHeight = "36rem";
     card.style.objectFit = "cover";
@@ -44,7 +44,7 @@ class Populator {
     const cardBody = document.createElement("div");
     cardBody.setAttribute("class", "card-body");
     cardBody.style.height = "50%";
-    const cardTitle = document.createElement("h3");
+    const cardTitle = document.createElement("h1");
     cardTitle.setAttribute("class", "card-title");
     cardTitle.innerText = project.name;
     cardBody.appendChild(cardTitle);
@@ -145,7 +145,7 @@ class Project {
     team = "Team",
     githubLink = "No link!",
     emailAddress = "No address!",
-    imageLink = "UP.png",
+    imageLink = "UP.jpg",
     description = "Description on its way!"
   ) {
     this.company = company;
@@ -159,7 +159,7 @@ class Project {
 }
 
 class Company {
-  constructor(name = "name", imageLink = "UP.png") {
+  constructor(name = "name", imageLink = "UP.jpg") {
     this.name = name;
     this.imageLink = imageLink;
   }
@@ -198,7 +198,7 @@ class ProjectList {
 
   generateList() {
     const projects = [];
-    const epiUse = new Company("Epi-Use", "EPI-USE-logo.png");
+    const epiUse = new Company("Epi-Use Labs", "EPI-USE-logo.png");
     const mathU = new Company("MathU", "MathU-Logo_RGBshort-1.png");
     const aws = new Company("Amazon", "Amazon_Web_Services_Logo.png");
     const retroRabbit = new Company("Retro Rabbit", "RetroRabbit.png");
@@ -256,7 +256,7 @@ class ProjectList {
       "DACERS",
       "https://github.com/COS301-SE-2022/Fresh-Produce-Inventory-Tracker",
       "email",
-      "UP.png",
+      "UP.jpg",
       "The fresh-produce tracker will be implemented to allow fresh produce-store owners to track the stock and quality of their produce through various methods. These methods will include using a scale which is placed at the bottom of a shelf, the initial combined weight of all individual items on the shelf is compared to the current combined weight of items on the shelf in order to calculate the current quantity of that specific item in stock. Security measures will be implemented to ensure the safe and ethical use of the fresh-produce tracker."
     );
     const twitterSummariser = new Project(
@@ -337,7 +337,7 @@ class ProjectList {
       "Denied Access",
       "https://github.com/COS301-SE-2022/Grid-Watch",
       "email",
-      "UP.png",
+      "UP.jpg",
       "This system attempts to provide a method for members of the public to be able to communicate, and resolve, municipal issues in their areas. From there the process of resolving these issues is communicated through the GridWatch System application."
     );
     const cryptoHub = new Project(
@@ -346,7 +346,7 @@ class ProjectList {
       "Code Force",
       "https://github.com/COS301-SE-2022/CryptoHub",
       "email",
-      "UP.png",
+      "UP.jpg",
       "CryptoHub is an interactive and social application that allows a user to explore the world of crypto. Each user has the ability to share and explore investment recommendations, crypto stories as well as have insight into crypto coins and the current global crypto news."
     );
     const charitySpot = new Project(
@@ -364,7 +364,7 @@ class ProjectList {
       "Segmentation Cult",
       "https://github.com/COS301-SE-2022/MathU-Similarity-Index",
       "email",
-      "UP.png",
+      "UP.jpg",
       "The MathU Similarity Index App accepts a mathematical problem as user input and returns a list of similar problems. The app provides a confidence score for each problem returned by the algorithm. This confidence score is used to show how similar the returned equation is to the user input. The MathU Learning App also has functionality to solve basic math problems and gives the users access to past papers and memos. The app will be used to help users better understand the problems they are struggling with and how to solve them."
     );
     const imageConverter = new Project(
@@ -382,7 +382,7 @@ class ProjectList {
       "CapsOn",
       "https://github.com/COS301-SE-2022/Tutor-Me",
       "email",
-      "UP.png",
+      "UP.jpg",
       "The Tutor Me project is an idea that aims to provide a platform where students that need help academically can easily find a tutor that can help them with specific modules. This project will be useful especially now that the covid-19 pandemic has made it much difficult to have face-to-face conversations, ask for help with their studies from fellow students, and interact with lecturers for additional assistance. As with the rest of the world, every matter related to students is moving towards being digital and virtual."
     );
     const loraTracking = new Project(

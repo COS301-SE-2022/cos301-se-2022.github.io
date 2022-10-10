@@ -64,11 +64,24 @@
 		</nav>
 
 		<div class="flexbox justify-content-center">
-			<h1 class="text-center" style="color: white;">COS301 Project Day</h1>
+			<div style="display: flex; justify-content: center">
+				<img src="images/UP.png" style="height: 150px" ; />
+				<div>
+					<h1 style="max-width: 960px; text-align: center; color: white;">
+						COS301 Project Day
+					</h1>
+					<h4 style="color: white; text-align: center; max-width: 450px;">
+						A chance for these teams to showcase their hard work, and explain the
+						projects they've been hard at work on over the course of their final
+						year.
+					</h4>
+				</div>
+			</div>
+
 			<div
 				class="container-fluid row text-center"
 				id="project-container"
-				style="margin: 0 auto; justify-content: center; display: flexbox;"
+				style="margin: 0 auto; justify-content: center; display: flexbox"
 			></div>
 		</div>
 
@@ -86,13 +99,23 @@
 					<div class="modal-body">
 						<h3 id="modal-heading"></h3>
 						<div id="modal-image-container">
-							<img 
-								id="modal-team-image" 
-								style="width: 40%; padding: 6px; max-height: 200px; object-fit: contain;" 
+							<img
+								id="modal-team-image"
+								style="
+									width: 40%;
+									padding: 6px;
+									max-height: 200px;
+									object-fit: contain;
+								"
 							/>
 							<img
 								id="modal-company-image"
-								style="width: 40%; padding: 6px; max-height: 200px; object-fit: contain;"
+								style="
+									width: 40%;
+									padding: 6px;
+									max-height: 200px;
+									object-fit: contain;
+								"
 							/>
 						</div>
 						<p id="modal-description">Some text in the modal.</p>

@@ -39,7 +39,7 @@
 		<title>COS301 Project Day</title>
 	</head>
 
-	<body>
+	<body onload="populateSponsorsHelper()">
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -54,15 +54,23 @@
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="#">Home</a></li>
+						<li><a href="index.html">Home</a></li>
 						<li><a href="#">Sponsors</a></li>
 						<li><a href="#">About</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
-        <h1>
-            Sorry, this page is still under construction!
-        </h1>
+		<div style="display: flex; justify-content: center;">
+			<img src="images/UP.png" style="height: 150px;";>
+			<h3 style="max-width: 960px; text-align: center; color: white;">
+				Thank you so much to these sponsors for being involved with the project
+				day, and COS301 as a whole! Your involvement makes a huge difference to
+				these young adults who are preparing for the working world, and being
+				inspired to achieve greatness.
+			</h3>
+		</div>
+		
+		<div class="row" id="sponsors-container" style="display: flex; margin: 12px; flex-wrap: wrap;"></div>
 	</body>
 </html>

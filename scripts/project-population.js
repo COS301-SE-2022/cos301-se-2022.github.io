@@ -517,7 +517,7 @@ class ProjectList {
     const epiUse = new Company("Epi-Use", "EPI-USE-logo.png");
     const retroRabbit = new Company("Retro Rabbit", "RetroRabbit.png");
     const agileBridge = new Company("Agile Bridge", "agile-bridge.png");
-    const entelect = new Company("Entelect", "Entelect.png");
+    const entelect = new Company("Entelect", "entelect.png");
     const comotion = new Company("Comotion Business Solutions", "comotion.png");
     const hensoldt = new Company("Hensoldt", "hensoldt.png");
     const kindle = new Company("Kindle Insurance Technology", "kindle.png");

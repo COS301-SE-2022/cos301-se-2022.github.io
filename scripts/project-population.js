@@ -23,7 +23,7 @@ class Populator {
 		card.setAttribute("class", "col-sm-6");
 		card.style.boxShadow = "rgba(0, 0, 0, 0.24) 0px 3px 8px";
 		card.style.width = "26rem";
-		card.style.minWidth = "420px";
+		card.style.minWidth = "px";
 		card.style.height = "36rem";
 		card.style.minHeight = "36rem";
 		card.style.objectFit = "cover";
@@ -98,6 +98,7 @@ class Populator {
 			sponsorCard.style.width = "32rem";
 			sponsorCard.style.objectFit = "cover";
 			sponsorCard.setAttribute("class", "card");
+			sponsorCard.style.alignSelf = "center";
 			sponsorCard.style.color = "black";
 			sponsorCard.style.backgroundColor = "white";
 			sponsorCard.style.padding = "12px";
@@ -245,7 +246,7 @@ class ProjectList {
 			"The fresh-produce tracker will be implemented to allow fresh produce-store owners to track the stock and quality of their produce through various methods. These methods will include using a scale which is placed at the bottom of a shelf, the initial combined weight of all individual items on the shelf is compared to the current combined weight of items on the shelf in order to calculate the current quantity of that specific item in stock. Security measures will be implemented to ensure the safe and ethical use of the fresh-produce tracker."
 		);
 		const twitterSummariser = new Project(
-			mathU,
+			epiUse,
 			"Twitter Summariser",
 			"BitByBit",
 			"https://github.com/COS301-SE-2022/Twitter-Summariser",

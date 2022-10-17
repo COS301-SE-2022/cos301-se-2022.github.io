@@ -78,18 +78,21 @@ class Populator {
     const modalTitle = document.getElementById("modal-title");
     const modalHeading = document.getElementById("modal-heading");
     const modalDescription = document.getElementById("modal-description");
+    modalDescription.style.padding = "6px";
     const btnGitLink = document.getElementById("modal-git-link");
-	const modalImageContainer = document.getElementById("modal-image-container");
+    const modalImageContainer = document.getElementById(
+      "modal-image-container"
+    );
     const modalTeamImage = document.getElementById("modal-team-image");
     const modalCompanyImage = document.getElementById("modal-company-image");
-	const modalMailLink = document.getElementById("modal-mail-link");
-	const modalVideoLink = document.getElementById("modal-video-link");
-	const modalWebLink = document.getElementById("modal-web-link");
+    const modalMailLink = document.getElementById("modal-mail-link");
+    const modalVideoLink = document.getElementById("modal-video-link");
+    const modalWebLink = document.getElementById("modal-web-link");
 
     modalTitle.innerText = project.name;
-	modalImageContainer.style.display = "flex";
-	modalImageContainer.style.justifyContent = "center";
-	modalImageContainer.style.padding = "6px";
+    modalImageContainer.style.display = "flex";
+    modalImageContainer.style.justifyContent = "center";
+    modalImageContainer.style.padding = "6px";
     modalHeading.innerText =
       "Team " +
       project.team +
@@ -105,9 +108,9 @@ class Populator {
       "src",
       "images/companyLogos/" + project.company.imageLink
     );
-	modalMailLink.setAttribute("href", "mailto:" + project.emailAddress);
-	modalWebLink.setAttribute("href", project.webAddress);
-	modalVideoLink.setAttribute("href", project.videoLink);
+    modalMailLink.setAttribute("href", "mailto:" + project.emailAddress);
+    modalWebLink.setAttribute("href", project.webAddress);
+    modalVideoLink.setAttribute("href", project.videoLink);
   }
 
   populateSponsors(sponsors) {
@@ -142,6 +145,30 @@ class Populator {
       container.appendChild(sponsorCard);
     });
   }
+
+  populatePrizes(prizes) {
+    const container = document.getElementById("prizes-div");
+    prizes.forEach(prize => {
+
+      const heading = document.createElement("h2");
+      heading.innerText = prize.name + ", sponsored by " + prize.sponsor;
+      heading.style.color = "white";
+
+      /*
+      const sponsor = document.createElement("h3");
+      sponsor.innerText = "Sponsored by " + prize.sponsor;
+      sponsor.style.color = "white";
+      */
+
+      const description = document.createElement("p");
+      description.innerText = prize.description;
+      description.style.color = "white";
+
+      container.appendChild(heading);
+      //container.appendChild(sponsor);
+      container.appendChild(description);
+    });
+  }
 }
 
 class Project {
@@ -153,8 +180,8 @@ class Project {
     emailAddress = "#",
     imageLink = "UP.jpg",
     description = "Description on its way!",
-	videoLink = "#",
-	webAddress = "#"
+    videoLink = "#",
+    webAddress = "#"
   ) {
     this.company = company;
     this.name = name;
@@ -163,8 +190,8 @@ class Project {
     this.emailAddress = emailAddress;
     this.imageLink = imageLink;
     this.description = description;
-	this.videoLink = videoLink;
-	this.webAddress = webAddress;
+    this.videoLink = videoLink;
+    this.webAddress = webAddress;
   }
 }
 
@@ -172,6 +199,14 @@ class Company {
   constructor(name = "name", imageLink = "UP.jpg") {
     this.name = name;
     this.imageLink = imageLink;
+  }
+}
+
+class Prize {
+  constructor(name="name", sponsor="sponsor",description="description") {
+    this.name = name;
+    this.sponsor=sponsor;
+    this.description = description;
   }
 }
 
@@ -198,7 +233,9 @@ function populateSponsorsHelper() {
 
   const projectList = new ProjectList();
   const companies = projectList.getCompanies();
+  const prizes = projectList.getPrizes();
   testPopulator.populateSponsors(companies);
+  testPopulator.populatePrizes(prizes);
 }
 
 class ProjectList {
@@ -531,5 +568,28 @@ class ProjectList {
     companies.push(kindle);
     companies.push(alligience);
     return companies;
+  }
+
+  getPrizes() {
+    const prizes = new Array();
+
+    const agile = new Prize("Agile Process Adoption", "Agile Bridge", "The Agile process adoption should stand out for the following attributes:\n- Usage of personas.\n- How their solution provides value.\n- Agile project management tool usage.\n- Good breakdown of epics and stories.\n- Continuous updates to documentation.");
+    prizes.push(agile);
+    const algorithmic = new Prize("Algorithmic Innovation", "Retro Rabbit", "Algorithmics forms the underpinnings of computer science. It is about designing correct, efficient and implementable algorithms for real-world problems. This prize will be awarded to the team who applied the most brilliant algorithmic ideas to address scalability and efficiency issues");
+    prizes.push(algorithmic);
+    const architecture = new Prize("Architectural Awareness", "Entelect", "Software architecture refers to the high-level structures of a software system. Candidates for this prize should convince the judges that their system design is based on appropriate software architecture and design patterns to ensure compliance with the quality requirements of their system.");
+    prizes.push(architecture);
+    const data = new Prize("Best Use of Data", "Comotion Business Solutions", "Data science is a multi-disciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and insights from structured and unstructured data. Methods may include Artificial intelligence, Analytics, Machine Learning, Natural Language Processing, etc. If your project applies data science appropriately for a practical purpose, this prize may be yours.");
+    prizes.push(data);
+    const userexperience = new Prize("Best User Experience", " Allegiance Consulting", "User experience design (UX, UXD, UED or XD) is the process of enhancing user satisfaction with a product by improving the usability, accessibility, and pleasure provided in the interaction with the product. To qualify for this prize the project should not only have the most aesthetic user interface, it should more importantly pay attention to the totality of the end-users perceptions as they interact with the product, including the enhancement of user effectiveness, efficiency and emotional satisfaction.");
+    prizes.push(userexperience);
+    const fitForPurpose = new Prize("Fit For Purpose", "Kindle Insurance Technology", "The 'Fit for purpose' prize will be awarded to the team that shows the best insight into the realworld problem domain and combines this knowledge with their technical skills to model and develop a software solution that accurately and efficiently addresses the real-world requirements, both functional and non-functional.");
+    prizes.push(fitForPurpose);
+    const innovation = new Prize("Innovation", "EPI-USE Labs", "EPI-USE deliver value through innovation. They value passion and imagination. To qualify for this prize, the project should have a highly advanced, innovative, or pioneering aspect. You have to convince the judges of your exceptional innovation. The use of emerging technologies, i.e. Artificial Intelligence, Machine Learning, Blockchain, Virtual Reality, Augmented Reality, Cloud Native technology etc., will be advantageous.");
+    prizes.push(innovation);
+    const seExcellence = new Prize("Software Engineering Excellence", "Hensoldt", "To qualify, the team should have a culture of software engineering excellence. This can be observed when evaluating: \n- how they make things (coding standards, reviews, design patterns, etc.)\n- how they operate (planning, monitoring, data integrity, etc.)\n- how they function as a team (values, team structure, transparency, etc.)");
+    prizes.push(seExcellence);
+
+    return prizes;
   }
 }

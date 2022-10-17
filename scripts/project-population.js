@@ -33,6 +33,10 @@ class Populator {
 
     const imageDiv = document.createElement("div");
     imageDiv.style.height = "50%";
+    imageDiv.style.display = "flex";
+    imageDiv.style.justifyContent = "center";
+    imageDiv.style.alignItems = "center";
+    imageDiv.objectFit = "contain";
     const cardImage = document.createElement("img");
     cardImage.setAttribute("class", "card-img-top");
     cardImage.setAttribute("src", "images/projectLogos/" + project.imageLink);

@@ -134,11 +134,14 @@ class Populator {
       const imgContainer = document.createElement("div");
       imgContainer.style.height = "70%";
       imgContainer.style.width = "100%";
-      imgContainer.style.objectFit = "cover";
+      imgContainer.style.display = "flex";
+      imgContainer.style.justifyContent = "center";
+      imgContainer.style.objectFit = "contain";
       const image = document.createElement("img");
       image.setAttribute("src", "images/companyLogos/" + sponsor.imageLink);
       image.style.maxWidth = "100%";
       image.style.maxHeight = "100%";
+      image.style.alignSelf = "center";
       imgContainer.appendChild(image);
       sponsorCard.appendChild(imgContainer);
 

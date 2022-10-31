@@ -665,7 +665,7 @@ class ProjectList {
 		const comotion = new Company("Comotion Business Solutions", "comotion.png");
 		const hensoldt = new Company("Hensoldt", "hensoldt.png");
 		const kindle = new Company("Kindle Insurance Technology", "kindle.png");
-		const alligience = new Company("Alligience Consulting", "alligience.png");
+		const allegiance = new Company("Allegiance Consulting", "allegiance.png");
 		companies.push(epiUse);
 		companies.push(retroRabbit);
 		companies.push(agileBridge);
@@ -673,7 +673,7 @@ class ProjectList {
 		companies.push(comotion);
 		companies.push(hensoldt);
 		companies.push(kindle);
-		companies.push(alligience);
+		companies.push(allegiance);
 		return companies;
 	}
 
